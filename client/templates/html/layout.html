@@ -1,0 +1,17 @@
+<template name="layout">
+    <div class="all">
+        <div class="container">
+            <main>
+                {{> yield}}
+            </main>
+        </div>
+
+        {{>SlideShow}}
+        {{>FooterContent}}
+    </div>
+</template>
+
+
+<template name="loading">
+    <div class="center"><h1>Loading</h1></div>
+</template>

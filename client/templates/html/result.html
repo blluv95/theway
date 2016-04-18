@@ -1,0 +1,38 @@
+<template name="result">
+    <button type="button" id="button_back" class="btn btn-success btn-lg left-block "
+            style="width: 30%;; margin-bottom: 30px ">Quay Lại
+    </button>
+    <h3 style="font-weight: bold; text-align: center">Kết Quả Tìm Kiếm</h3>
+    <table>
+        <thead>
+        <tr>
+            <th>Tên Chuyến</th>
+            <th>Nhà Xe</th>
+            <th>Điểm Dừng &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+            <th>C#1</th>
+            <th>C#2</th>
+            <th>C#3</th>
+            <th>C#4</th>
+            <th>C#5</th>
+            <th>C#6</th>
+            <th>C#7</th>
+            <th>C#8</th>
+        </tr>
+        </thead>
+        <tbody>
+        {{#each  listRS}}
+            <tr>
+                <td class="user-name">{{TenTuyen}}</td>
+                <td>{{NhaXe}}</td>
+                <td>{{DiemDung}}</td>
+                {{#each listGio}}
+                    <td class="user-mobile">{{Time}}</td>
+                {{/each}}
+            </tr>
+        {{/each}}
+        </tbody>
+    </table>
+    <button type="button" id="button_order" class="btn btn-success btn-lg center-block "
+            style="width: 45%; margin-bottom: 30px">Đặt Vé Ngay
+    </button>
+</template>

@@ -1,0 +1,81 @@
+<template name="datvethanhcong">
+    <div class="row">
+        <div class="col-sm-6 col-sm-offset-3" style=" margin: 20px 0px">
+            <form role="form" id="contactForm" style="border: 1px dotted #000000; background: #accdff">
+                <div class="row">
+                    <div class="form-group col-sm-12" style="align-content: center ; color: red">
+                        <h3 style="font-weight: bold; text-align: center">ĐẶT VÉ THÀNH CÔNG</h3></div>
+                    <div class="form-group col-sm-6">
+                        <label for="name" class="h4">Nhà xe</label>
+                        <input type="text" class="form-control" id="info_nx" readonly>
+                    </div>
+                    <div class="form-group col-sm-6">
+                        <label for="email" class="h4">Tên chuyến</label>
+                        <input type="text" class="form-control" id="info_tenchuyen" readonly>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-sm-6">
+                        <label for="name" class="h4">Điểm bắt đầu</label>
+                        <input type="text" class="form-control" id="info_start" readonly>
+                    </div>
+                    <div class="form-group col-sm-6">
+                        <label for="email" class="h4">Điểm kết thúc</label>
+                        <input type="text" class="form-control" id="info_end" readonly>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-sm-6">
+                        <label for="name" class="h4">Giờ</label>
+                        <input type="text" class="form-control" id="info_time" readonly>
+                    </div>
+                    <div class="form-group col-sm-6">
+                        <label for="email" class="h4">Ngày đặt vé</label>
+                        <input type="text" class="form-control" id="info_date" readonly>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="form-group col-sm-6">
+                        <label for="name" class="h4">Số lượng người lớn</label>
+                        <input type="text" class="form-control" id="info_tall" readonly>
+                    </div>
+                    <div class="form-group col-sm-6">
+                        <label for="email" class="h4">Giá</label>
+                        <input type="text" class="form-control" id="tall_money" readonly>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-sm-6">
+                        <label for="name" class="h4"> Số lượng trẻ em</label>
+                        <input type="text" class="form-control" id="info_chilren" readonly>
+                    </div>
+                    <div class="form-group col-sm-6">
+                        <label for="email" class="h4">Giá</label>
+                        <input type="text" class="form-control" id="info_chilren_money" readonly>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-sm-6">
+                        <label for="name" class="h4">Số lượng em bé</label>
+                        <input type="text" class="form-control" id="info_child" readonly>
+                    </div>
+                    <div class="form-group col-sm-6">
+                        <label for="email" class="h4">Giá</label>
+                        <input type="text" class="form-control" id="info_child_money" readonly>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-sm-12">
+                        <label for="name" class="h4">Tổng Tiền</label>
+                        <input type="text" class="form-control" id="total_money" readonly>
+                    </div>
+                </div>
+
+                <button type="submit" id="button_success" class="btn btn-success btn-lg center-block "
+                        style="width: 45%;; margin-bottom: 30px">Hoàn tất
+                </button>
+            </form>
+        </div>
+    </div>
+</template>

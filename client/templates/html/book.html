@@ -1,0 +1,139 @@
+<template name="book">
+    <div class="container">
+        <div class="col-md-6" style="margin-top: 30px">
+            <div class="row">
+                <form style="background-color: rgba(254, 88, 21, 0.81) ;border: 1px solid #ff7603" content="center">
+                    <h3 style="text-align: center; padding-top: 15px; padding-bottom: 18px; font-weight: bold ;color: white">
+                        ĐẶT VÉ
+                        GIÁ RẺ</h3>
+                    <div class="form-group">
+                        <label class="control-label col-xs-12 text-justify" style="color: white">Chọn phương
+                            tiện</label>
+                        <select class="form-control col-xs-12">
+                            <option>Xe khách</option>
+                            <option>Taxi</option>
+                        </select>
+                        <label class="control-label col-xs-12 text-justify" style="color: white">Chọn nhà xe</label>
+                        <select class="form-control col-xs-12" id="select_dsNhaXe">
+                            <option>--------</option>
+                            <option>Tất cả</option>
+                            {{#each dsNhaXe}}
+                                <option>{{TenNhaXe}}</option>
+                            {{/each}}
+                        </select>
+                        <label class="control-label col-xs-12 text-justify" style="color: white">Chọn điểm khởi
+                            hành</label>
+                        <select class="form-control col-xs-12" id="select_lTo">
+                            <option>--------</option>
+                        </select>
+
+                        <label class="control-label col-xs-12 text-justify" style="color: white">Chọn điểm kết
+                            thúc</label>
+                        <select class="form-control col-xs-12" id="select_lFrom">
+
+                            <option>--------</option>
+                        </select>
+                        <label class="control-label col-xs-12 text-justify" style="color: white">Ngày đi</label>
+                        <input type="date" class="col-xs-12" placeholder="Thời gian" id="date_go"
+                               style="width: 75%; margin-left: 13%; height: 32px;padding: 0px 0px;">
+                        <label class="control-label col-xs-12 text-justify" style="color: white">Nhập số vé người
+                            lớn (nhỏ hơn 10)</label>
+                        <input type="number" class="form-control  col-xs-12" placeholder="Chỉ được nhập số"
+                               id="input_slTall" value="1" style="width: 75%">
+                        <label class="control-label col-xs-12 text-justify" style="color: white">Nhập số vé trẻ em
+                            (nhỏ hơn 2)</label>
+                        <input type="number" class="form-control  col-xs-12" placeholder="Chỉ được nhập số"
+                               id="input_slChildren" value="0" style="width: 75%">
+                        <label class="control-label col-xs-12 text-justify" style="color: white">Nhập số vé em bé
+                            (nhỏ hơn 2)</label>
+                        <input type="number" class="form-control  col-xs-12" placeholder="Chỉ được nhập số"
+                               id="input_slChild" value="0" style="width: 75% ; margin-bottom: 30px">
+                    </div>
+
+                    <div class="col-xs-offset-1  ">
+                        <button id="btnSubmit" type="submit" class="btn btn-default center-block"
+                                style="margin-top: 20px"
+                        >Tìm chuyến xe đặt
+                        </button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+        <div class="col-md-6" style="margin: 30px 0px;">
+            <div class="row" style="margin: 0px 0px;">
+                <div class="img-wrapper" style="width: auto;height: auto; padding: 0px 0px 30px 0px; margin: 0px 0px">
+                    <img src="http://thuexegiatot.vn/wp-content/uploads/2016/03/3529_1090068984387021_5249232198858163667_n.jpg"
+                         style="width: 100%;margin: 0px 0px">
+                </div>
+                <div class="operator" style="border: 1px dotted #000000; height: 305px; padding: 0px 10px;">
+                    <h2 class="sfu-TradeGothicB">TỔNG ĐÀI ĐẶT VÉ</h2>
+                    <span class="block os-Bold mrg-t-15">Để đặt vé và nhận các thông tin hãy gọi:</span>
+                    <span class="block z_52 os-ExBold c_1" style="font-size: 23px">0904.391.391</span>
+                    <span class="block">Hoặc email cho chúng tôi: <a
+                            href="mailto:datve@vegiare.com">datve@theway.com</a></span>
+
+                    <img class="pull-right"
+                         src="http://www.communicationskillstraining.co.uk/images/course_index_pics/telephone_skills.jpg"
+                         alt="Ms. Thanh Nhung" title="Ms. Thanh Nhung"
+                         style="width: 30%; height: auto; margin-right: 20px; margin-top: 15px">
+                    <br>
+                    <div class="li-caption pull-left">
+                        <span class="block os-Bold">Miss THANH NHUNG</span>
+                        <span class="block">Hỗ trợ đặt vé</span>
+                        <span class="block c_2">0967.11.22.88</span>
+                        <span class="block c_2">0967.11.22.99</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    {{>resultBook}}
+</template>
+
+
+<template name="resultBook">
+    <form id="resultBook">
+        <table border="1">
+            <thead>
+
+
+            <tr>
+                <th width="100">Nhà Xe</th>
+                <th>Tên Chuyến</th>
+                <th>Điểm bắt đầu</th>
+                <th>Điểm kết thúc</th>
+                <th>Giờ</th>
+                <th>Số ghế trống</th>
+                <th>Giá</th>
+            </tr>
+            </thead>
+            <tbody>
+            {{#each  listVRS}}
+                <tr>
+                    <td>{{TenXe}}</td>
+                    <td>{{TenChuyen}}</td>
+                    <td>{{DiemDung}}</td>
+                    <td>{{DiemKT}}</td>
+                    <td>{{Gio}}</td>
+                    <td>{{Null}}</td>
+                    <td>{{Gia}}</td>
+                    <td>
+                        {{#if Null}}
+                            <button type="button" class="use-address" id="button_book">Đặt Vé</button>
+                        {{else}}
+                            <button type="button" class="use-address" id="button_book" disabled
+                                    style="background-color: beige">Hết Vé
+                            </button>
+                        {{/if}}
+                    </td>
+                </tr>
+            {{/each}}
+            </tbody>
+        </table>
+        <hr>
+
+    </form>
+</template>
